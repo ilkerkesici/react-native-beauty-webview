@@ -83,16 +83,12 @@ const App = () => {
           visible={visible} // Reguired for open and close
           onPressClose={() => setVisible(false)} // Reguired for closing the modal
           url={'https://github.com/'}
-          headerBackground={'#000'}
-          headerContent={'light'}
           extraMenuItems={[
             {
               title: 'Extra Item',
               onPress: () => console.log('Extra Menu Item Clicked'),
             },
           ]}
-          progressHeight={10}
-          progressColor="red"
         />
         <TouchableOpacity style={styles.button} onPress={onButtonPress}>
           <Text style={styles.text}>Open</Text>

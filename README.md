@@ -147,4 +147,4 @@ You must install @react-native-community/clipboard package correctly before use 
 
 ## :clipboard: References
 #### mxck/react-native-material-menu
-For menu component, I took this resource. More information about this resource, please <a href="https://github.com/mxck/react-native-material-menu">click here</a>
+For menu component, I took advantages from this resource. More information about this resource, please <a href="https://github.com/mxck/react-native-material-menu">click here</a>

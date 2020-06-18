@@ -7,7 +7,7 @@
 - Open on browser
 - See title of website on header
 
-## :star: ScreenShot
+## :star: Screenshot
 
 ![](./assets/ios.gif)
 ![](./assets/android.gif)

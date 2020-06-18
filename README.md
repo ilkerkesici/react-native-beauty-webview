@@ -1,5 +1,5 @@
 <p>
-  <a href="https://github.com/ilkerkesici/react-native-beauty-webview/edit/master/README.tr.md">
+  <a href="https://github.com/ilkerkesici/react-native-beauty-webview/blob/master/README.tr.md">
     <img alt="Build Status" src="https://img.shields.io/static/v1?label=dil&message=tr&color=yellow" target="_blank" />
  </a>
   <a href="https://yarnpkg.com/package/react-native-beauty-webview">

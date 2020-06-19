@@ -53,7 +53,7 @@ $ npm install --save @react-native-community/clipboard
 ```
 
 #### Link native dependencies for IOS
-Link native dependencies of @react-native-community/clipboard and @react-native-community/react-native-webview. If your react native verison is lower than 0.60.x, you must check the official documentation of these packeaages to link correctly.
+Link native dependencies of @react-native-community/clipboard and @react-native-community/react-native-webview. If your react native verison is lower than 0.60.x, you must check the official documentation of these packages to link correctly.
 
 ```sh
 

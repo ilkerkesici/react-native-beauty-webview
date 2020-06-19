@@ -89,7 +89,6 @@ const App = () => {
   };
 
   return (
-    <>
       <View style={styles.container}>
         <BeautyWebView
           visible={visible} // Reguired for open and close
@@ -106,7 +105,6 @@ const App = () => {
           <Text style={styles.text}>Open</Text>
         </TouchableOpacity>
       </View>
-    </>
   );
 };
 

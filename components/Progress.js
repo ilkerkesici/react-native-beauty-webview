@@ -8,13 +8,7 @@ export default class Progress extends Component{
         animated: new Animated.Value(0),
     }
 
-    // hello = (progress) => {
-    //     console.log(progress);
-    //     this.startAnimation(progress);
-    // }
-
     startAnimation = (toValue) => {
-        console.log(toValue);
         Animated.timing(
             this.state.animated,
             {

@@ -1,3 +1,15 @@
+<p>
+  <a href="https://github.com/ilkerkesici/react-native-beauty-webview/blob/master/README.tr.md">
+    <img alt="Build Status" src="https://img.shields.io/static/v1?label=dil&message=tr&color=yellow" target="_blank" />
+ </a>
+  <a href="https://yarnpkg.com/package/react-native-beauty-webview">
+    <img alt="Documentation" src="https://img.shields.io/static/v1?label=pack&message=yarn&color=blue" target="_blank" />
+  </a>
+  <a href="https://www.npmjs.com/package/react-native-beauty-webview">
+    <img alt="Documentation" src="https://img.shields.io/static/v1?label=pack&message=npm&color=red" target="_blank" />
+  </a>
+</p>
+
 # React Native Beauty Webview for easy usage
 ## :star2: Features
 - Easy usage
@@ -7,7 +19,7 @@
 - Open on browser
 - See title of website on header
 
-## :star: ScreenShot
+## :star: Screenshot
 
 ![](./assets/ios.gif)
 ![](./assets/android.gif)
@@ -41,7 +53,7 @@ $ npm install --save @react-native-community/clipboard
 ```
 
 #### Link native dependencies for IOS
-Link native dependencies of @react-native-community/clipboard and @react-native-community/react-native-webview. If your react native verison is lower then 0.60.x, you must check the official documentation of these packeaages to link correctly.
+Link native dependencies of @react-native-community/clipboard and @react-native-community/react-native-webview. If your react native verison is lower than 0.60.x, you must check the official documentation of these packeaages to link correctly.
 
 ```sh
 
@@ -77,7 +89,6 @@ const App = () => {
   };
 
   return (
-    <>
       <View style={styles.container}>
         <BeautyWebView
           visible={visible} // Reguired for open and close
@@ -94,7 +105,6 @@ const App = () => {
           <Text style={styles.text}>Open</Text>
         </TouchableOpacity>
       </View>
-    </>
   );
 };
 
@@ -141,10 +151,10 @@ export default App;
 
 ## :warning: Dependency
 ### @react-native-community/react-native-webview
-You must install @react-native-community/react-native-webview package correctly before use this package. For moore information, please <a href="https://github.com/react-native-community/react-native-webview/blob/master/docs/Getting-Started.md">click here</a>
+You must install @react-native-community/react-native-webview package correctly before use this package. For more information, please <a href="https://github.com/react-native-community/react-native-webview/blob/master/docs/Getting-Started.md">click here</a>
 ### @react-native-community/clipboard
-You must install @react-native-community/clipboard package correctly before use this package. For moore information, please <a href="https://github.com/react-native-community/clipboard">click here</a>
+You must install @react-native-community/clipboard package correctly before use this package. For more information, please <a href="https://github.com/react-native-community/clipboard">click here</a>
 
 ## :clipboard: References
 #### mxck/react-native-material-menu
-For menu component, I took this resource. More information about this resource, please <a href="https://github.com/mxck/react-native-material-menu">click here</a>
+For menu component, I took advantages of this resource. More information about this resource, please <a href="https://github.com/mxck/react-native-material-menu">click here</a>

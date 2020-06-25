@@ -80,7 +80,7 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
-import BeautyWebView from './react-native-beauty-webview';
+import BeautyWebView from 'react-native-beauty-webview';
 
 const App = () => {
   const [visible, setVisible] = useState(false);

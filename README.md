@@ -25,6 +25,7 @@
 ![](./assets/ios.gif)
 ![](./assets/android.gif)
 ![](./assets/video_2.gif)
+![](./assets/video_3.gif)
 
 ## :arrow_down: Installation
 

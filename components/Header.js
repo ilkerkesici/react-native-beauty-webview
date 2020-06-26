@@ -7,8 +7,9 @@ import {
   Image,
   Text,
 } from 'react-native';
-import {images, colors} from '../res';
-import {CutomMenu} from './CustomMenu';
+import { images, colors } from '../res';
+import { CutomMenu } from './CustomMenu';
+import BackgroundProgress from './BackgroundProgress';
 
 export const Header = ({
   backgroundColor,
@@ -19,22 +20,35 @@ export const Header = ({
   openBrowserTitle,
   copyLinkTitle,
   extraMenuItems,
+  backgroundProgressRefOnChange,
+  canback,
+  canForward,
+  navigationVisible,
+  onPressBack,
+  onPressForward,
+  closeIcon,
+  menuIcon
 }) => {
-  copyClipBoard = async () => {};
+  let forward;
+  let back;
+  if (!canback) back = images.backDisabled;
+  else if (contentType == 'light') back = images.backLight;
+  else back = images.backDark;
+
+  if (!canForward) forward = images.forwardDisabled;
+  else if (contentType == 'light') forward = images.forwardLight;
+  else forward = images.forwardDark
   return (
     <View
       style={[
         styles.container,
-        {backgroundColor: backgroundColor},
+        { backgroundColor: backgroundColor },
       ]}>
-      <TouchableOpacity onPress={onPressClose} style={styles.iconButton}>
-        <Image
-          source={
-            contentType === 'light' ? images.closeLight : images.closeDark
-          }
-          style={styles.icon}
-        />
-      </TouchableOpacity>
+      <Icon onPress={onPressClose} content={contentType === 'light' ? images.closeLight : images.closeDark} icon={closeIcon} />
+      {navigationVisible &&
+        <Icon onPress={onPressBack} content={back} />
+      }
+      <BackgroundProgress content={contentType} ref={backgroundProgressRefOnChange} />
       <View style={styles.body}>
         <Text
           numberOfLines={1}
@@ -53,6 +67,9 @@ export const Header = ({
           {url}
         </Text>
       </View>
+      {navigationVisible &&
+        <Icon onPress={onPressForward} content={forward} />
+      }
       <View>
         <CutomMenu
           extraMenuItems={extraMenuItems}
@@ -60,13 +77,27 @@ export const Header = ({
           openBrowserTitle={openBrowserTitle}
           copyLinkTitle={copyLinkTitle}
           url={url}
+          menuIcon={menuIcon}
         />
       </View>
     </View>
   );
 };
 
-export const styles = StyleSheet.create({
+
+const Icon = ({ onPress, content, icon }) => {
+  return (
+    <TouchableOpacity onPress={onPress} style={styles.iconButton}>
+      {icon ||
+        <Image
+          source={content}
+          style={styles.icon}
+        />}
+    </TouchableOpacity>
+  );
+}
+
+const styles = StyleSheet.create({
   container: {
     alignSelf: 'stretch',
     height: Platform.OS == 'android' ? 50 : 60,
@@ -75,7 +106,6 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-end',
     borderBottomColor: colors.lightGray,
     borderBottomWidth: 1,
-    //backgroundColor: colors.defaultBackground,
   },
   iconButton: {
     width: 40,

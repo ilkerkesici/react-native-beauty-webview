@@ -18,11 +18,13 @@
 - Default click and copy url
 - Open on browser
 - See title of website on header
+- Navigation
 
 ## :star: Screenshot
 
 ![](./assets/ios.gif)
 ![](./assets/android.gif)
+![](./assets/video_2.gif)
 
 ## :arrow_down: Installation
 
@@ -147,6 +149,15 @@ export default App;
 | openBrowserTitle | string | 'Open on Browser' | - | Text of the opening on bowser menu item |
 | extraMenuItems | Array | - | - | Extra menu items, you can see detail on usage part on above |
 | animationType | 'slide' or 'fade' | 'slide' | - | Animation type of modal |
+| progressBarType | 'normal' or 'background' | 'normal' | - | Progress bar type |
+| onLoadEnd | func | - | - | Run at end of the loading |
+| onLoadStart | func | - | - | Run before start loading |
+| navigationVisible | boolean | true| - | Show navigation buttons |
+| closeIcon | Component | - | - | Close icon of header |
+| menuIcon | Component | - | - | Menu icon of header |
+| onGoBack | func | - | - | Run at going back |
+| onGoForward | func | - | - | Run at going forward |
+
 
 
 ## :warning: Dependency

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Modal } from 'react-native';
+import { View, StyleSheet, Modal, SafeAreaView } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { Header } from './components/Header';
 import Progress from './components/Progress';
@@ -77,51 +77,54 @@ const BeautyWebView = ({
       setForwardQueue([]);
       setCurrentUrl(url);
     }, 200);
-  } 
+  }
 
   return (
     <Modal visible={visible} transparent={false} animationType={animationType}>
-      <View style={[styles.container, { backgroundColor: backgroundColor }]}>
-        <Header
-          backgroundColor={headerBackground}
-          contentType={headerContent}
-          title={title}
-          url={currentUrl}
-          onPressClose={onClose}
-          copyLinkTitle={copyLinkTitle}
-          openBrowserTitle={openBrowserTitle}
-          extraMenuItems={extraMenuItems}
-          backgroundProgressRefOnChange={setBackgroundProgressRef}
-          navigationVisible={navigationVisible}
-          canForward={forwardQueue.length > 0}
-          canback={backQueue.length > 0}
-          onPressBack={onPressBack}
-          onPressForward={onPressForward}
-          closeIcon={closeIcon}
-          menuIcon={menuIcon}
-        />
-        {
-          progressBarType === 'normal' &&
-          <Progress
-            height={progressHeight}
-            color={progressColor}
-            ref={(progress) => setProgressRef(progress)}
+      <SafeAreaView style={styles.container}>
+        <View style={[styles.container, { backgroundColor: backgroundColor }]}>
+          <Header
+            backgroundColor={headerBackground}
+            contentType={headerContent}
+            title={title}
+            url={currentUrl}
+            onPressClose={onClose}
+            copyLinkTitle={copyLinkTitle}
+            openBrowserTitle={openBrowserTitle}
+            extraMenuItems={extraMenuItems}
+            backgroundProgressRefOnChange={setBackgroundProgressRef}
+            navigationVisible={navigationVisible}
+            canForward={forwardQueue.length > 0}
+            canback={backQueue.length > 0}
+            onPressBack={onPressBack}
+            onPressForward={onPressForward}
+            closeIcon={closeIcon}
+            menuIcon={menuIcon}
           />
-        }
-        <WebView
-          source={{ uri: currentUrl }}
-          onLoadProgress={({ nativeEvent }) => {
-            let loadingProgress = nativeEvent.progress;
-            onProgress(loadingProgress);
-          }}
-          injectedJavaScript="window.ReactNativeWebView.postMessage(document.title)"
-          onMessage={event => setTitle(event.nativeEvent.data)}
-          onLoadEnd={onLoadEnd}
-          onLoadStart={onLoadStart}
-          onNavigationStateChange={onNavigationStateChange}
-        />
-      </View>
+          {
+            progressBarType === 'normal' &&
+            <Progress
+              height={progressHeight}
+              color={progressColor}
+              ref={(progress) => setProgressRef(progress)}
+            />
+          }
+          <WebView
+            source={{ uri: currentUrl }}
+            onLoadProgress={({ nativeEvent }) => {
+              let loadingProgress = nativeEvent.progress;
+              onProgress(loadingProgress);
+            }}
+            injectedJavaScript="window.ReactNativeWebView.postMessage(document.title)"
+            onMessage={event => setTitle(event.nativeEvent.data)}
+            onLoadEnd={onLoadEnd}
+            onLoadStart={onLoadStart}
+            onNavigationStateChange={onNavigationStateChange}
+          />
+        </View>
+      </SafeAreaView>
     </Modal>
+
   );
 };
 

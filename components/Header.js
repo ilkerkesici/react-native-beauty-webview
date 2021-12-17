@@ -100,7 +100,7 @@ const Icon = ({ onPress, content, icon }) => {
 const styles = StyleSheet.create({
   container: {
     alignSelf: 'stretch',
-    height: Platform.OS == 'android' ? 50 : 60,
+    height: Platform.OS == 'android' ? 20 : 30,
     zIndex: 1,
     flexDirection: 'row',
     alignItems: 'flex-end',

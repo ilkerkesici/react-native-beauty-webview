@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Modal } from 'react-native';
+import { SafeAreaView, StyleSheet, Modal } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { Header } from './components/Header';
 import Progress from './components/Progress';
@@ -82,7 +82,7 @@ const BeautyWebView = ({
 
   return (
     <Modal visible={visible} transparent={false} animationType={animationType}>
-      <View style={[styles.container, { backgroundColor: backgroundColor }]}>
+      <SafeAreaView style={[styles.container, { backgroundColor: backgroundColor }]}>
         <Header
           backgroundColor={headerBackground}
           contentType={headerContent}
@@ -122,7 +122,7 @@ const BeautyWebView = ({
           onNavigationStateChange={onNavigationStateChange}
           incognito={incognito}
         />
-      </View>
+      </SafeAreaView>
     </Modal>
   );
 };

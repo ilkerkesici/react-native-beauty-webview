@@ -1,6 +1,6 @@
 {
   "name": "react-native-beauty-webview",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "React-Native Beatuy Web View with different functionalty, and beauty ui",
   "main": "index.js",
   "scripts": {

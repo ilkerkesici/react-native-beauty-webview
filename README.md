@@ -94,8 +94,8 @@ const App = () => {
   return (
       <View style={styles.container}>
         <BeautyWebView
-          visible={visible} // Reguired for open and close
-          onPressClose={() => setVisible(false)} // Reguired for closing the modal
+          visible={visible} // Required for open and close
+          onPressClose={() => setVisible(false)} // Required for closing the modal
           url={'https://github.com/'}
           extraMenuItems={[
             {
